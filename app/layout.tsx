@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider, currentUser, SignedIn } from "@clerk/nextjs";
+import { Nav } from "@/components/shared/Nav";
+import { ThemeProvider } from "@/providers/theme-provider";
+import BgPattern from "@/components/shared/bgPattern";
+import Footer from "@/components/shared/footer";
+import { init } from "next/dist/compiled/webpack/webpack";
+import { initialUser } from "@/lib/init-user";
+import { redirect } from "next/navigation";
+import { ModelProvider } from "@/providers/model-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Cairo({ subsets: ["arabic"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider
+      
+    >
+
+
+      <html lang="ar" dir="rtl">
+
+        <body
+          className="min-h-[70vh] scrollbar-hide"
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Nav isAdmin='dd' />
+            <BgPattern />
+            <ModelProvider />
+
+
+            {children}
+
+          </ThemeProvider>
+        </body>
+        <Footer />
+      </html>
+    </ClerkProvider>
   );
 }

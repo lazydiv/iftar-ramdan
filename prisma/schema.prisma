@@ -3,7 +3,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextIndex", "fullTextSearch"]
 }
 
 datasource db {
@@ -11,9 +10,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
+enum UserRole {
+  ADMIN
+  USER
+
+}
+
+model User {
+  id        String   @id @default(uuid())
+  userId   String   @unique
+  name     String
+  orders   Order[]
+  createdAt DateTime @default(now())
+  role   UserRole @default(ADMIN)
+  email String @db.Text
+  
+
+  @@index([id])
+  @@index([userId])
+}
+
+model Order {
   id        String   @id @default(uuid())
   title     String
+  status    String
+  uniId     String?   @db.Text
+  userid    String     
+  phone     String   @db.Text
+  user User @relation(fields: [userid], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  mealType String 
+  
 
-  @@fulltext([title])
+  @@index([id])
+  @@index([userid])
 }
