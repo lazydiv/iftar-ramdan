@@ -31,7 +31,7 @@ export async function  MainNav({
         </Link>
         {profile?.role === "ADMIN" && (
           <Link
-            href="/admin"
+            href="/admin/orders"
             className={cn(
               "transition-colors hover:text-foreground/80",
             )}
@@ -49,7 +49,7 @@ export async function  MainNav({
 
         </Link>
         <Link
-          href="/about"
+          href="/org"
           className={cn(
             "transition-colors hover:text-foreground/80",
           )}

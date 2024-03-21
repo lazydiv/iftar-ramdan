@@ -8,17 +8,10 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui
 import { cn } from '@/lib/utils'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { Order } from '@prisma/client'
 
 interface OrderCardProps {
-    order: {
-        id: string;
-        title: string;
-        status: string;
-        uniId: string | null;
-        userid: string;
-        phone: string;
-        createdAt: Date;
-    }
+   order: Order
 }
 
 
@@ -111,6 +104,10 @@ const OrderCard = (
                     <p>
                         <span> كود الطالب </span>
                         <span>{order.uniId}</span>
+                    </p>
+                    <p>
+                        <span> نوع الوجبة</span>
+                        <span>{order.mealType}</span>
                     </p>
                     <div>تم طلب {order.createdAt.toString()}</div>
                 </div>

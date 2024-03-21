@@ -1,17 +1,12 @@
 'use client'
 
-import { Separator } from '@radix-ui/react-separator'
-import { Check, Gavel, Loader, MoreVertical, Shield, ShieldCheck, ShieldQuestion, StarIcon } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
-import { Button } from '../ui/button'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/card'
-import { cn } from '@/lib/utils'
-import axios from 'axios'
-import { useRouter } from 'next/navigation'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { User } from '@prisma/client'
-import { ScrollArea } from '../ui/scroll-area'
-import { UserAvatar } from './User-Avatar'
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuPortal, DropdownMenuSubContent, DropdownMenuItem } from '@/components/ui/dropdown-menu'
+import axios from 'axios'
+import { Check, Gavel, MoreVertical, Shield, ShieldQuestion } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 
 interface UserCardProps {
     user: User

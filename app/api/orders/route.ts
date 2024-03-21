@@ -7,7 +7,7 @@ import { PrismaClient } from '@prisma/client';
 
 export async function POST(req: Request) {
     try {
-        const { name, uniId, phone } = await req.json();
+        const { name, uniId, phone, mealType } = await req.json();
         const profile = await currentProfile();
         if (!profile) {
             return new NextResponse('Unauthorized', { status: 401 })
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
                 phone: phone,
                 title: name,
                 status: 'pending',
+                mealType: mealType
                 
 
 

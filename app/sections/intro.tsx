@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import Image from 'next/image'
 import { useModal } from '@/hooks/use-model-store'
-import { currentProfile } from '@/lib/current-user'
 
 const Intro = () => {
     const { onOpen } = useModal();

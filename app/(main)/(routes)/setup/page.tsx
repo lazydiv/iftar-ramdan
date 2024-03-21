@@ -9,12 +9,12 @@ const page = async () => {
         
         const profile = await currentProfile()
         if (!profile) {
-            initialUser()
+          await  initialUser()
         }
     } catch (error) {
         console.log(error)
     } finally {
-        redirect('/home')
+        redirect('/')
     }
     return (
         <div>

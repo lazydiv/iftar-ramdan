@@ -8,13 +8,7 @@ import { Button } from "../ui/button"
 import { useRouter } from "next/navigation"
 import Lsection from "./Lsection"
 
-export function Nav(
-    {
-        isAdmin = 'guest'
-    }: {
-        isAdmin: string 
-    }
-) {
+export function Nav() {
 
     
 
@@ -30,7 +24,7 @@ export function Nav(
 
                 <div className=" ">
 
-                    <MainNav isAdmin={isAdmin}/>
+                    <MainNav />
                 </div>
                 <div className="lg:w-[33%] flex justify-end"  >
 
