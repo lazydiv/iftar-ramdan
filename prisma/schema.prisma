@@ -8,6 +8,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 enum UserRole {
@@ -20,10 +21,11 @@ model User {
   id        String   @id @default(uuid())
   userId   String   @unique
   name     String
+  role   UserRole @default(USER)
+  email String @db.Text
   orders   Order[]
   createdAt DateTime @default(now())
-  role   UserRole @default(ADMIN)
-  email String @db.Text
+  updatedAt DateTime @updatedAt
   
 
   @@index([id])
@@ -34,12 +36,13 @@ model Order {
   id        String   @id @default(uuid())
   title     String
   status    String
-  uniId     String?   @db.Text
+  uniId     String   @db.Text
   userid    String     
   phone     String   @db.Text
+  mealType String 
   user User @relation(fields: [userid], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
-  mealType String 
+  updatedAt DateTime @updatedAt
   
 
   @@index([id])

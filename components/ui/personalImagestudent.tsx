@@ -12,12 +12,12 @@ interface PersnalProps extends React.HTMLAttributes<HTMLElement> {
     }[]
 }
 
-const Personal = ({ className, items, ...props }: PersnalProps) => {
+const Personalstudent = ({ className, items, ...props }: PersnalProps) => {
     return (
         <>
             {items.map((item) => (
-                <div className='text-center m-10 font-bold' key={item.title}>
-                    <UserAvatar  src={item.href}  className=' w-52 h-52 object-cover' />
+                <div className='text-center m-10 items-center font-bold' key={item.title}>
+                    <UserAvatar className='h-28 w-28 object-fill' src={item.href}   />
                     {item.title}
                     <br />
                     <h5>
@@ -33,4 +33,4 @@ const Personal = ({ className, items, ...props }: PersnalProps) => {
     )
 }
 
-export default Personal
+export default Personalstudent

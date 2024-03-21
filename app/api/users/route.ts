@@ -40,9 +40,49 @@ export async function PATCH(req: Request) {
 }
 
 
+// export async function POST(req: Request) {
+//     try {
+//         const  {id, firstName, lastName, email}  = await req.json();
+
+        
+//         const userExists = await db.user.findFirst({
+//             where: {
+//                 userId: id
+//             }
+//         })
+//         if (userExists) {
+//             return new NextResponse('User already exists', { status: 400 })
+//         }
+//         const newUser = await db.user.create({
+//             data: {
+//                 userId: id,
+//                 name: `${firstName} ${lastName}`,
+//                 email: email
+
+//             }
+
+//         })
+
+
+
+//         return (
+//             NextResponse.json(newUser)
+//         )
+
+
+//     } catch (error) {
+
+//         console.log("[creating User]", error)
+//         return new NextResponse("Internal Server Error", { status: 500 })
+
+//     }
+
+// }
+
+
 
 export async function DELETE(req: Request) {
-  
+
 
     try {
 

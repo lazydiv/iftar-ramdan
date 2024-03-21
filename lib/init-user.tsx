@@ -11,17 +11,17 @@ if (!clerkUser) {
     return redirectToSignIn();
 }
 
-// const user = await db.user.findUnique({
-//     where: {
-//         id: clerkUser.id
-//     }
-// });
+const user = await db.user.findFirst({
+    where: {
+        id: clerkUser.id
+    }
+});
 
-// if (user) {
-//     return user;
-// } 
+if (user) {
+    return user;
+} 
 
-  const user = await db.user.create({
+  const newUser = await db.user.create({
     data: {
       userId: clerkUser.id,
       name: `${clerkUser.firstName} ${clerkUser.lastName}`,
@@ -29,5 +29,5 @@ if (!clerkUser) {
     }
   });
 
-  return user;
+  return newUser;
 };

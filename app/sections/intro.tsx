@@ -4,10 +4,20 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import Image from 'next/image'
 import { useModal } from '@/hooks/use-model-store'
+import { currentProfile } from '@/lib/current-user'
+import { auth } from '@clerk/nextjs'
+import { redirect } from 'next/navigation'
+import { db } from '@/lib/db'
 
 const Intro = () => {
-    const { onOpen } = useModal();
+
+
     
+    const { onOpen } = useModal();
+
+
+
+
     return (
         <section className="container  mt-36 flex-col flex justify-around">
 

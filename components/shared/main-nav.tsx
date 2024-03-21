@@ -6,11 +6,7 @@ import { ArrowDown, } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { currentProfile } from "@/lib/current-user"
 
-export async function  MainNav({
-  isAdmin = 'guest'
-}: {
-  isAdmin?: string
-}){
+export async function  MainNav(){
   const profile = await currentProfile()
 
   

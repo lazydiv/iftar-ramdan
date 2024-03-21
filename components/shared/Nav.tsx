@@ -7,8 +7,10 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { useRouter } from "next/navigation"
 import Lsection from "./Lsection"
+import { currentProfile } from "@/lib/current-user"
 
-export function Nav() {
+export async function Nav() {
+    const profile = await currentProfile()
 
     
 
@@ -26,10 +28,9 @@ export function Nav() {
 
                     <MainNav />
                 </div>
-                <div className="lg:w-[33%] flex justify-end"  >
-
+                <div className="lg:w-[33%] flex justify-end">
                     <Lsection />
-                    <MobileNav />
+                    <MobileNav role={profile?.role || 'USER'} />
                 </div>
             </div>
         </header>

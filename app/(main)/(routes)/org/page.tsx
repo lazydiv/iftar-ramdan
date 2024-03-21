@@ -1,5 +1,6 @@
 
 import Personal from '@/components/ui/personalImage'
+import Personalstudent from '@/components/ui/personalImagestudent'
 
 
 const items = [
@@ -27,7 +28,7 @@ const items = [
         name: 'Ahmed Khairy'
     },
     {
-        href: "",
+        href: "https://utfs.io/f/dc4feabe-0478-4575-a932-d98762d2afea-1zbfv.jpeg",
         title: "Tec head",
         name: 'Yahia khaild'
     },
@@ -71,8 +72,8 @@ const page = () => {
 
 
     return (
-        <div className='container mt-12'>
-            <div className='flex m-5  flex-wrap'>
+        <div className='container mx-auto mt-12'>
+            <div className='flex m-5 justify-center  flex-wrap'>
             <div className='w-full text-center  text-xl font-bold text-yellow-500 text-primary my-10'>
                 Faculty Heads
             </div>
@@ -80,7 +81,7 @@ const page = () => {
             <div className='w-full text-center  text-xl font-bold text-primary my-10'>
                 Orgnization Heads
             </div>
-            <Personal items={itemsSt}/>
+            <Personalstudent items={itemsSt}/>
             <div className='w-full text-center  text-xl font-bold text-primary my-10'>
                 Orgnization members
             </div>
