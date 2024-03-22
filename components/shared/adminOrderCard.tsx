@@ -50,6 +50,7 @@ const OrderCard = (
         try {
            
             await axios.delete('/api/orders', { data: order });
+            
             console.log()
             router.refresh()
         

@@ -6,7 +6,7 @@ import Personalstudent from '@/components/ui/personalImagestudent'
 const items = [
     {
         href: "https://utfs.io/f/68b26e79-6429-4e1c-bf34-83ba0d20e47c-u197u.jpg",
-        title: "عميد كلية تكنولوجيا الحاسب و المعلومات",
+        title: "عميد كلية علوم الحاسب وتكنولوجيا المعلومات",
         name: 'د / اسامة عز الدين امام'
     },
     {
@@ -19,9 +19,9 @@ const items = [
         title: "منسق البرامج ",
         name: 'د / سلوى أسامة'
     }
- ]
+]
 
- const itemsSt = [
+const itemsSt = [
     {
         href: "https://utfs.io/f/817ed682-f1e0-4652-8b95-984a6f5d2d75-iqbpo4.jpg",
         title: "general supervisor",
@@ -42,7 +42,7 @@ const items = [
         title: "manger ",
         name: 'Ahmed salah  '
     },
-    
+
     {
         href: "https://utfs.io/f/16b463e3-c2e8-40e6-afcd-f7a3a08d7822-5fs0do.jpg",
         title: "vice Oc head ",
@@ -63,30 +63,28 @@ const items = [
         title: " ",
         name: 'Ibrahim Hamdy'
     },
-   
- ]
+
+]
 
 
 
 const page = () => {
-    
+
 
 
 
     return (
         <div className='container mx-auto mt-12'>
             <div className='flex m-5 justify-center  flex-wrap'>
-            <div className='w-full text-center  text-xl font-bold text-yellow-500 text-primary my-10'>
-                Faculty Heads
-            </div>
-            <Personal items={items}/>
-            <div className='w-full text-center  text-xl font-bold text-primary my-10'>
-                Orgnization Heads
-            </div>
-            <Personalstudent items={itemsSt}/>
-            <div className='w-full text-center  text-xl font-bold text-primary my-10'>
-                Orgnization members
-            </div>
+                <div className='w-full text-center  text-xl font-bold text-yellow-500 text-primary my-10'>
+                    Faculty Heads
+                </div>
+                <Personal items={items} />
+                <div className='w-full text-center  text-xl font-bold text-primary my-10'>
+                    Orgnization Heads
+                </div>
+                <Personalstudent items={itemsSt} />
+
 
             </div>
 

@@ -28,12 +28,18 @@ const OrderCard = (
 
     if (!isMounted) return null
     return (
-        <Card className="mt-32 max-w-96 mx-auto">
+        <Card className="mt-20 max-w-96 mx-auto">
             <CardHeader className="grid  grid-cols-[1fr_110px] items-start gap-4 space-y-0">
                 <div className="space-y-5">
                     <CardTitle className="text-primary">وجبة افطار</CardTitle>
                     <CardDescription className="">
-                        الرجاء التواصل مع هذا الرقم 01203004033 لتاكيد الطلب
+                        شكرا ع طلبك .
+                        <br />
+                        برجاء التواصل مع هذه الأرقام علي الواتساب لتاكيد ومتابعه الحجز .
+                        <br />
+                        01100108253
+                        <br />
+                        01145199771
                     </CardDescription>
                 </div>
                 <div className="flex items-center space-x-1 rounded-md  text-secondary-foreground">
@@ -50,11 +56,11 @@ const OrderCard = (
                 </div>
                 <div>
                     <p>
-                        <span>اسم الطالب : </span>
+                        <span>الاسم  : </span>
                         <span>{order.title}</span>
                     </p>
                     <p>
-                        <span>رقم الطلب: </span>
+                        <span>رقم الهاتف: </span>
                         <span>{order.phone}</span>
                     </p>
                     <p>
@@ -65,7 +71,11 @@ const OrderCard = (
                         <span> نوع الوجبة : </span>
                         <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : 'ميكس لح'}</span>
                     </p>
-                    <div>تم طلب {order.createdAt.toString()}</div>
+                    <div> وقت الطلب:  {order.createdAt.toString()}</div>
+                    <p className='text-black/50 dakr:text-white/50 mt-5 text-sm'>
+                    
+                        يرجي مراجعة الموقع ف خلال ساعه ال ٣ ساعات بعد الدفع للتاكيد ان عملية الدفع تمت بنجاح .
+                    </p>
                 </div>
             </CardContent>
         </Card>

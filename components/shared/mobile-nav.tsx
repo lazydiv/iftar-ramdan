@@ -76,7 +76,7 @@ export  function MobileNav({role}: {role: UserRole}) {
               href='/'
               onOpenChange={setOpen}
             >
-              المنزل
+              الصفحة الرئيسية
             </MobileLink>
           
           {role  === "ADMIN" && (
