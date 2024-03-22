@@ -78,7 +78,7 @@ const OrderCard = (
                     </Button>
                     <Button 
                     variant="secondary" 
-                    className={cn(order.status !== "pending" ? 'bg-green-600' : 'bg-yellow-500')}
+                    className={cn(order.status !== "pending" ? 'bg-green-600' : 'bg-yellow-600')}
                     onClick={()=> onSubmit()}
                     >
 
@@ -106,8 +106,8 @@ const OrderCard = (
                         <span>{order.uniId}</span>
                     </p>
                     <p>
-                        <span> نوع الوجبة</span>
-                        <span>{order.mealType}</span>
+                        <span> نوع الوجبة : </span>
+                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : 'ميكس لح'}</span>
                     </p>
                     <div>تم طلب {order.createdAt.toString()}</div>
                 </div>

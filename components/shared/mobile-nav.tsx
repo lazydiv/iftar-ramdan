@@ -95,7 +95,14 @@ export  function MobileNav({role}: {role: UserRole}) {
               طلباتي
             </MobileLink>
             <MobileLink
-              href="https://wa.me/+2012030004033"
+              href="/org"
+              onOpenChange={setOpen}
+
+            >
+              المنظمين
+            </MobileLink>
+            <MobileLink
+              href="https://api.whatsapp.com/send?phone=201100108253&text=%D8%B7%D8%B1%D9%8A%D9%82%D9%87%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D8%9F"
               onOpenChange={setOpen}
 
             >
@@ -105,7 +112,7 @@ export  function MobileNav({role}: {role: UserRole}) {
           </div>
           <div className="mt-14">
 
-          <UserButton showName />
+         
           </div>
 
         </ScrollArea>

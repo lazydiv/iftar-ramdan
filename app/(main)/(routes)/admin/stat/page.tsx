@@ -15,7 +15,6 @@ export default async function Orders() {
     }
 if (profile.role !== "ADMIN") redirect("/")
 
-
     const order = await db.order.findMany({})
 
     return (
@@ -26,9 +25,7 @@ if (profile.role !== "ADMIN") redirect("/")
 
 
 
-            {order.length === 0 && (
-                <div className="flex  justify-center text-primary mt-14 text-xl font-bold w-full ">لا يوجد طلبات</div>
-            )}
+            
         </div>
 
     )

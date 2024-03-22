@@ -42,13 +42,14 @@ const items = [
         title: "manger ",
         name: 'Ahmed salah  '
     },
+    
     {
-        href: "",
-        title: " ",
-        name: 'Ibrahim Hamdy'
+        href: "https://utfs.io/f/16b463e3-c2e8-40e6-afcd-f7a3a08d7822-5fs0do.jpg",
+        title: "vice Oc head ",
+        name: 'Haidy hosaam'
     },
     {
-        href: "https://utfs.io/f/fe09620e-8593-4dab-a58b-22732a4dae5e-1ka04j.jpg",
+        href: "https://utfs.io/f/593afd26-2112-4c43-831f-03f35ec78727-57pq01.24.48_ea52dbfc.jpg",
         title: "media head",
         name: 'Menna Elbanna'
     },
@@ -58,10 +59,11 @@ const items = [
         name: 'Ziad sameh'
     },
     {
-        href: "https://utfs.io/f/16b463e3-c2e8-40e6-afcd-f7a3a08d7822-5fs0do.jpg",
-        title: "vice Oc head ",
-        name: 'Haidy hosaam'
-    }
+        href: "",
+        title: " ",
+        name: 'Ibrahim Hamdy'
+    },
+   
  ]
 
 

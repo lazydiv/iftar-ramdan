@@ -25,7 +25,7 @@ export default async function Orders() {
                 <OrderCard key={order.id} order={order} />
             ))}
             {order.length === 0 && (
-                <p className="">لا يوجد طلبات</p>
+                <div className="flex  justify-center text-primary mt-14 text-xl font-bold w-full ">لا يوجد طلبات</div>
             )}
         </div>
 

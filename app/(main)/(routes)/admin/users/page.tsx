@@ -14,8 +14,7 @@ export default async function Orders() {
     if (!profile) {
         return redirect("/sign-in")
     }
-
-
+if (profile.role !== "ADMIN") redirect("/")
     const users = await db.user.findMany({})
     
     return (
