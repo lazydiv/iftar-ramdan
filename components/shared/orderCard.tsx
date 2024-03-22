@@ -69,7 +69,7 @@ const OrderCard = (
                     </p>
                     <p>
                         <span> نوع الوجبة : </span>
-                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : order.mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}</span>
+                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chiken' ? 'فراخ' : order.mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}</span>
                     </p>
                     <div> وقت الطلب:  {order.createdAt.toString()}</div>
                     <p className='text-black/50 dark:text-white/50 mt-5 text-sm'>

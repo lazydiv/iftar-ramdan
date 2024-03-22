@@ -49,7 +49,7 @@ const formSchema = z.object({
 export const PlaceOrder = () => {
     const { isOpen, type, onClose } = useModal();
     const router = useRouter();
-    const params = useParams()
+
     const ismodalOpen = isOpen && type === 'placeOrder';
 
     const form = useForm(
@@ -142,7 +142,7 @@ export const PlaceOrder = () => {
                                             className='uppercase text-xm font-bold  dark:text-yellow-50'
 
                                         >
-                                            الكود الجامعي \ الرقم القومي
+                                            الرقم القومي
                                         </FormLabel>
                                         <FormControl >
                                             <Input
@@ -173,7 +173,7 @@ export const PlaceOrder = () => {
                                         <FormControl >
                                             <Input
                                                 disabled={isLoading}
-                                                placeholder='ادخل رقم الهاتف '
+                                                placeholder='(رقم واتساب) ادخل رقم الهاتف '
                                                 className='bg-foreground/5 '
                                                 {...field}
                                             />

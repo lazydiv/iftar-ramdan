@@ -108,7 +108,7 @@ const OrderCard = (
                     </p>
                     <p>
                         <span> نوع الوجبة : </span>
-                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : order.mealType === 'fasting' ? 'صيامي':  'ميكس لحوم وفراخ'}</span>
+                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chiken' ? 'فراخ' : order.mealType === 'fasting' ? 'صيامي':  'ميكس لحوم وفراخ'}</span>
                     </p>
                     <div>تم طلب {order.createdAt.toString()}</div>
                 </div>
