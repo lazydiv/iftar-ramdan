@@ -7,7 +7,7 @@ const items = [
     {
         href: "https://utfs.io/f/68b26e79-6429-4e1c-bf34-83ba0d20e47c-u197u.jpg",
         title: "عميد كلية تكنولوجيا الحاسب و المعلومات",
-        name: 'د / اسامة عز الدين ايمام'
+        name: 'د / اسامة عز الدين امام'
     },
     {
         href: "https://utfs.io/f/d2368c91-a94e-4c96-803c-4d20d80a1b87-2s.helal.jpg",
@@ -59,7 +59,7 @@ const items = [
         name: 'Ziad sameh'
     },
     {
-        href: "",
+        href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
         title: " ",
         name: 'Ibrahim Hamdy'
     },

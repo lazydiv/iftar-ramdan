@@ -5,15 +5,20 @@ import {
     AlertDescription,
     AlertTitle,
 } from "@/components/ui/alert"
+import { ScrollArea } from "../ui/scroll-area"
+// import { ScrollArea } from "@radix-ui/react-scroll-area"
 
 export function Instructions() {
     return (
-        <Alert variant="default" className="bg-yellow-200/50 mt-5  line-clamp-6 md:line-clamp-none max-w-[850px]  
+        <Alert variant="default" className="bg-yellow-200/50 mt-5  max-h-60 max-w-[850px]  
         space-y-2  text-yellow-800 dark:text-yellow-200
          border-yellow-400">
             <AlertCircle className="h-4 w-4" />
             <AlertTitle>ارشدات !</AlertTitle>
             <AlertDescription className="text-base">
+            <ScrollArea className="text-right h-40">
+                <p>
+
                 🌙إرشادات للحضور إلى الإفطار الجماعي
                 <br />
                 الوقت: نرجو من جميع الحاضرين الالتزام بالوصول قبل موعد الأذان بوقت كافٍ لا يتعدي الساعه الخامسة ونصف مساءً لتجنب العجلة والتمكن من التحضير للإفطار بأريحية.
@@ -31,7 +36,8 @@ export function Instructions() {
                 نسأل الله أن يجعل لقاءنا في هذا الافطار سببًا في زيادة المحبة والأُلفة بيننا، وأن يتقبل منا صيامنا وقيامنا ويعيده علينا بالخير واليمن والبركات.
                 <br />
                 نتطلع للقاؤكم وتشارككم معنا.
-
+                </p>
+            </ScrollArea>
             </AlertDescription>
         </Alert>
     )
