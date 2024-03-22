@@ -147,7 +147,7 @@ export const PlaceOrder = () => {
                                         <FormControl >
                                             <Input
                                                 disabled={isLoading}
-                                                placeholder='ادخل الكود الجامعي او الرقم القومي'
+                                                placeholder='ادخل الرقم القومي'
                                                 className='bg-foreground/5 '
                                                 {...field}
                                             />
