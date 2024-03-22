@@ -37,9 +37,13 @@ const OrderCard = (
                         <br />
                         برجاء التواصل مع هذه الأرقام علي الواتساب لتاكيد ومتابعه الحجز .
                         <br />
-                        01100108253
-                        <br />
-                        01145199771
+                        <p className='text-primary'>
+                            <a href="https://api.whatsapp.com/send?phone=201097773245&text=%D8%B7%D8%B1%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%D8%9F">
+
+                                01097773245
+                            </a>
+                        </p>
+
                     </CardDescription>
                 </div>
                 <div className="flex items-center space-x-1 rounded-md  text-secondary-foreground">
