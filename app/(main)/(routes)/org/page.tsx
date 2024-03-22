@@ -29,11 +29,11 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/ed90002f-76a2-4b0c-8384-a6f8a9f2dd98-13mp.jpg",
-        title: "General supervisor",
+        title: "Vice General supervisor",
         name: 'Nadia Mohamed'
     },
     {
-        href: "https://utfs.io/f/dc4feabe-0478-4575-a932-d98762d2afea-1zbfv.jpeg",
+        href: "https://utfs.io/f/68bcb27c-9745-4873-a915-c9ec21bedbad-57ppz8.08.40_01f1ccfd.jpg",
         title: "Technical head",
         name: 'Yahia khaild'
     },
@@ -44,13 +44,18 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/3d8bb983-265f-4a9b-9072-4a419d6988d8-2oo.jpg",
-        title: "Event Manager ",
+        title: "Event Manager & PR manager",
         name: 'Mahmoud matter'
     },
     {
         href: "https://utfs.io/f/4c165aba-c8f1-4fff-9cb9-fd289680570e-1t0kg5.jpg",
         title: "Manger ",
         name: 'Ahmed salah  '
+    },
+    {
+        href: "https://utfs.io/f/be8f9ee0-6cc1-4723-9947-d8f5d54492d5-57ppzz.04.49_99b3ce1f.jpg",
+        title: "Vice PR Head ",
+        name: 'Mohamed Ibrahim'
     },
 
     {
@@ -65,18 +70,18 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/f4b8a493-580e-4e98-8653-19dd31b31766-2859g.jpg",
-        title: "vice media head",
-        name: 'Mohamed walid'
+        title: "OC Head",
+        name: 'Ziad Sameh'
     },
     {
-        href: "https://utfs.io/f/be8f9ee0-6cc1-4723-9947-d8f5d54492d5-57ppzz.04.49_99b3ce1f.jpg",
-        title: "Vice Pr Head ",
-        name: 'Mohamed Ibrahim'
+        href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
+        title: "Manger",
+        name: 'Ibrahim Hamdy'
     },
     {
         href: "https://utfs.io/f/052ca705-7223-45f8-99a7-01264deae8dd-tgw0x.jpg",
-        title: "Manger",
-        name: 'Ibrahim Hamdy'
+        title: "Vice Media Head",
+        name: 'Mohamed Walid'
     },
 
 ]
@@ -98,7 +103,7 @@ const page = () => {
                 <div className='w-full text-center  text-xl font-bold text-primary my-10'>
                     Orgnization Heads
                 </div>
-                <Personalstudent items={itemsSt} />
+                <Personalstudent items={itemsSt} className='' />
 
 
             </div>
