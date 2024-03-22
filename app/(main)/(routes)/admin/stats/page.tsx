@@ -29,6 +29,12 @@ export default async function Orders() {
             mealType: 'meat'
         }
     })
+    const acceptedMixOrders = await db.order.findMany({
+        where: {
+            status: "paid",
+            mealType: 'mix'
+        }
+    })
 
     const acceptedChikenOrder = await db.order.findMany({
         where: {
@@ -44,7 +50,12 @@ export default async function Orders() {
     })
     const chikenOrders = await db.order.findMany({
         where: {
-            mealType: 'meat'
+            mealType: 'chiken'
+        }
+    })
+    const mixOrders = await db.order.findMany({
+        where: {
+            mealType: 'mix'
         }
     })
     const fastingOrders = await db.order.findMany({
@@ -78,6 +89,10 @@ export default async function Orders() {
             value: meatOrders.length.toString()
         },
         {
+            title: "وجبات الميكس",
+            value: mixOrders.length.toString()
+        },
+        {
             title: "وجبات الصيامي",
             value: fastingOrders.length.toString()
         },
@@ -92,15 +107,20 @@ export default async function Orders() {
         {
             title: "وجبات الصيامي المقبولة",
             value: acceptedFastingOrders.length.toString()
+        },
+        {
+            title: "وجبات الميكس المقبولة",
+            value: acceptedMixOrders.length.toString()
         }
 
     ]
 
 
     return (
-        <div className="flex flex-wrap  container mt-10 mr-10 gap-9">
-            <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <div className="flex flex-col md:flex-row md:flex-wrap  container mt-10 gap-9">
+
+            <Card className="=">
+                <CardHeader className="flex flex-row items-center  justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                         المشتركين
                     </CardTitle>
@@ -169,7 +189,7 @@ export default async function Orders() {
                     </p>
                 </CardContent>
             </Card>
-            <div className="flex flex-wrap gap-10">
+            <div className="w-full flex flex-wrap  gap-10">
 
             <StatCard stats={Stats} />
             </div>

@@ -20,8 +20,8 @@ const StatCard = ({
 
             {stats.map((stat) => (
                 
-                    <Card key={stat.title}>
-                        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                    <Card key={stat.title} className='w-full md:max-w-56'>
+                        <CardHeader className="flex flex-col items-center justify-between space-y-0   pb-2">
                             <CardTitle className="text-sm font-medium">
                                 {stat.title}
                             </CardTitle>

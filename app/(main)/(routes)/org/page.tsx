@@ -40,7 +40,7 @@ const itemsSt = [
     {
         href: "https://utfs.io/f/6a503162-b06f-424b-a75a-83218a9926ba-tekzr.jpg",
         title: "Vice Technical head",
-        name: 'Mariem Mohamed'
+        name: 'Mariam Mohamed'
     },
     {
         href: "https://utfs.io/f/3d8bb983-265f-4a9b-9072-4a419d6988d8-2oo.jpg",
@@ -69,7 +69,7 @@ const itemsSt = [
         name: 'Menna Elbanna'
     },
     {
-        href: "https://utfs.io/f/f4b8a493-580e-4e98-8653-19dd31b31766-2859g.jpg",
+        href: "https://utfs.io/f/4c1e879e-145e-4a54-9481-07d027ed8725-1x0j65.jpg",
         title: "OC Head",
         name: 'Ziad Sameh'
     },

@@ -35,7 +35,7 @@ export default function layout({
 
             <div className="flex lg:flex-row flex-col">
         
-            <SidebarNav items={sidebarNavItems} className="w-[80%] lg:w-48 mr-12 bg-white/80 dark:bg-white/10  sticky top-24 rounded-xl border-black/10 border flex lg:flex-col mt-10 lg:h-48 justify-center items-center "/>
+            <SidebarNav items={sidebarNavItems} className="  lg:w-48  bg-white/80 dark:bg-white/10  sticky top-24 rounded-xl border-black/10 border flex lg:flex-col mt-10 lg:h-48 justify-center items-center "/>
             <div className="">
 
                 {children}
