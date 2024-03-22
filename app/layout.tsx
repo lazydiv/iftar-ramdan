@@ -9,6 +9,7 @@ import Footer from "@/components/shared/footer";
 import { init } from "next/dist/compiled/webpack/webpack";
 import { initialUser } from "@/lib/init-user";
 import { ModelProvider } from "@/providers/model-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import { cn } from "@/lib/utils";
 const font = Cairo({ subsets: ["arabic"], weight: ["400"] });
