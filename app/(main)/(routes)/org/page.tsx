@@ -44,7 +44,7 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/3d8bb983-265f-4a9b-9072-4a419d6988d8-2oo.jpg",
-        title: "Event Manager & PR manager",
+        title: "PR manager",
         name: 'Mahmoud matter'
     },
     {

@@ -27,6 +27,7 @@ import { Input } from '@/components/ui/input';
 import { useModal } from '@/hooks/use-model-store';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { DialogDescription } from '@radix-ui/react-dialog';
+import { useToast } from '../ui/use-toast';
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -63,6 +64,8 @@ export const PlaceOrder = () => {
             }
         }
     );
+    const { toast } = useToast()
+
 
 
     const isLoading = form.formState.isSubmitting;
@@ -86,6 +89,14 @@ export const PlaceOrder = () => {
 
 
             console.log(error);
+        } finally {
+            toast({
+                variant: 'success',
+                title: "تم اضافة طلبك بنجاح !",
+                description: "تم اضافة الطلب بنجاح برجاء التوجه الي طلباتي لمتابعه حالة الطلب.",
+                
+                
+              })
         }
     }
 
@@ -233,7 +244,7 @@ export const PlaceOrder = () => {
                             سعر الوجبة: 200 جنيه
                         </DialogDescription>
                         <DialogFooter className='py-4'>
-                            <Button variant={'primary'} className='w-full' disabled={isLoading}>اطلب !</Button>
+                            <Button variant={'primary'} className='w-full' disabled={isLoading}>اطلب</Button>
                         </DialogFooter>
                     </form>
                 </Form>

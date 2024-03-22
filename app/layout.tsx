@@ -10,6 +10,8 @@ import { init } from "next/dist/compiled/webpack/webpack";
 import { initialUser } from "@/lib/init-user";
 import { ModelProvider } from "@/providers/model-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Toaster } from "@/components/ui/toaster"
+
 import { Analytics } from "@vercel/analytics/react"
 import { cn } from "@/lib/utils";
 const font = Cairo({ subsets: ["arabic"], weight: ["400"] });
@@ -44,7 +46,7 @@ export default function RootLayout({
             <Nav />
             <BgPattern />
             <ModelProvider />
-
+            <Toaster />
 
             {children}
             <SpeedInsights />

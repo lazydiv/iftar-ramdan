@@ -49,6 +49,7 @@ const Intro = () => {
                             </Button>
                         
                     </SignedOut>
+                   
                     <Instructions />
                     <span>
 
