@@ -217,6 +217,9 @@ export const PlaceOrder = () => {
                                             <SelectItem key={type} value='mix' className='capitalize'>
                                                 ميكس فراخ ولحوم
                                             </SelectItem>
+                                            <SelectItem key={type} value='fasting' className='capitalize'>
+                                                اكل صيامي
+                                            </SelectItem>
 
                                         </SelectContent>
                                     </Select>

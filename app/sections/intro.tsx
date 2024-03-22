@@ -5,17 +5,18 @@ import React from 'react'
 import Image from 'next/image'
 import { useModal } from '@/hooks/use-model-store'
 import { currentProfile } from '@/lib/current-user'
-import { auth } from '@clerk/nextjs'
-import { redirect } from 'next/navigation'
+import { auth, SignedIn, SignedOut, SignIn } from '@clerk/nextjs'
+import { redirect, useRouter } from 'next/navigation'
 import { db } from '@/lib/db'
+import { on } from 'events'
 
 const Intro = () => {
 
 
-
+    
     const { onOpen } = useModal();
 
-
+    const router = useRouter()
 
 
     return (
@@ -32,13 +33,26 @@ const Intro = () => {
                         يوم مع الدكاترة ومع صحابنا ويكون يوم مميز لينا كلنا .
 
                     </span>
-                    <Button
-                        onClick={() => onOpen('placeOrder')}
-                        className="w-32 text-xl text-white"
+                    <SignedIn>
 
-                    >
-                        انضم الينا !
-                    </Button>
+                        <Button
+                            onClick={() => onOpen('placeOrder')}
+                            className="w-32 text-xl text-white"
+
+                        >
+                            انضم الينا !
+                        </Button>
+                    </SignedIn>
+                    <SignedOut>
+                        
+                            <Button
+                                onClick={() => router.push('/sign-in')}
+                                className="w-32 text-xl text-white"
+                            >
+                                انضم الينا !
+                            </Button>
+                        
+                    </SignedOut>
                     <Instructions />
                     <span>
 

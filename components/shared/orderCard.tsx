@@ -69,11 +69,11 @@ const OrderCard = (
                     </p>
                     <p>
                         <span> نوع الوجبة : </span>
-                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : 'ميكس لح'}</span>
+                        <span>{order.mealType === 'meat' ? 'لحمه' : order.mealType === 'chicken' ? 'فراخ' : order.mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}</span>
                     </p>
                     <div> وقت الطلب:  {order.createdAt.toString()}</div>
                     <p className='text-black/50 dakr:text-white/50 mt-5 text-sm'>
-                    
+
                         يرجي مراجعة الموقع ف خلال ساعه ال ٣ ساعات بعد الدفع للتاكيد ان عملية الدفع تمت بنجاح .
                     </p>
                 </div>
