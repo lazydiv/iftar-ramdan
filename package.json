@@ -25,6 +25,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@tanstack/react-table": "^8.14.0",
     "@uploadthing/react": "^6.4.0",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
