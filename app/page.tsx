@@ -16,16 +16,6 @@ export default async function page() {
     }
     
 
-    // try {
-
-    //     await axios.post('/api/users',  {data: {id: user?.id, firstName: user?.firstName,lastName: user?.lastName, email: user?.emailAddresses[0].emailAddress}});
-    //     console.log('hel')
-    //     redirect('/')
-
-    // } catch (error) {
-    //     console.log(error);
-    // }
-
 
     return (
         <div>

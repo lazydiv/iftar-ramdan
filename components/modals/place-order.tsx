@@ -68,7 +68,7 @@ export const PlaceOrder = () => {
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values)
+      
         try {
             // const url = qs.stringifyUrl({
             //     url: "/api/orders",
@@ -147,7 +147,7 @@ export const PlaceOrder = () => {
                                         <FormControl >
                                             <Input
                                                 disabled={isLoading}
-                                                placeholder='ادخل الرقم القومي'
+                                                placeholder='ادخل  الرقم القومي'
                                                 className='bg-foreground/5 '
                                                 {...field}
                                             />

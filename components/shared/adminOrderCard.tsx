@@ -36,7 +36,7 @@ const OrderCard = (
         try {
            
             await axios.patch('/api/orders', order);
-            console.log()
+    
             router.refresh()
         
         } catch (error) {

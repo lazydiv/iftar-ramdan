@@ -15,7 +15,7 @@ const items = [
         name: 'د / هلال احمد سليمان'
     },
     {
-        href: "https://utfs.io/f/a3c78587-124c-472e-9819-f194da18c53c-t3h9u.jpg",
+        href: "https://utfs.io/f/22858c00-3b9a-4843-a800-d511916317e5-qiwqom.jpg",
         title: "منسق البرامج ",
         name: 'د / سلوى أسامة'
     }
@@ -28,9 +28,19 @@ const itemsSt = [
         name: 'Ahmed Khairy'
     },
     {
+        href: "https://utfs.io/f/ed90002f-76a2-4b0c-8384-a6f8a9f2dd98-13mp.jpg",
+        title: "General supervisor",
+        name: 'Nadia Mohamed'
+    },
+    {
         href: "https://utfs.io/f/dc4feabe-0478-4575-a932-d98762d2afea-1zbfv.jpeg",
         title: "Technical head",
         name: 'Yahia khaild'
+    },
+    {
+        href: "https://utfs.io/f/6a503162-b06f-424b-a75a-83218a9926ba-tekzr.jpg",
+        title: "Vice Technical head",
+        name: 'Mariem Mohamed'
     },
     {
         href: "https://utfs.io/f/3d8bb983-265f-4a9b-9072-4a419d6988d8-2oo.jpg",
@@ -55,8 +65,8 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/f4b8a493-580e-4e98-8653-19dd31b31766-2859g.jpg",
-        title: "OC commuinty ",
-        name: 'Ziad sameh'
+        title: "vice media head",
+        name: 'Mohamed walid'
     },
     {
         href: "https://utfs.io/f/be8f9ee0-6cc1-4723-9947-d8f5d54492d5-57ppzz.04.49_99b3ce1f.jpg",
@@ -64,7 +74,7 @@ const itemsSt = [
         name: 'Mohamed Ibrahim'
     },
     {
-        href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
+        href: "https://utfs.io/f/052ca705-7223-45f8-99a7-01264deae8dd-tgw0x.jpg",
         title: "Manger",
         name: 'Ibrahim Hamdy'
     },

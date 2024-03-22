@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
 export async function PATCH(req: Request) {
     try {
-        const { id } = await req.json();
+        const { id, status } = await req.json();
 
         const profile = await currentProfile();
         if (!profile || profile.role !== 'ADMIN') {
@@ -60,7 +60,7 @@ export async function PATCH(req: Request) {
                 id
             },
             data: {
-                status: 'paid'
+                status: status === "pending" ? "paid" : "pending"
             }
 
         })
