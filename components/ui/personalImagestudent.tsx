@@ -18,7 +18,10 @@ const Personalstudent = ({ className, items, ...props }: PersnalProps) => {
             {items.map((item) => (
                 <div className='text-center m-10 items-center font-bold' key={item.title}>
                     <UserAvatar className='h-28 w-28 object-fill' src={item.href}   />
+                  
+
                     {item.title}
+
                     <br />
                     <h5>
                         {item.name}

@@ -24,12 +24,12 @@ const items = [
 const itemsSt = [
     {
         href: "https://utfs.io/f/817ed682-f1e0-4652-8b95-984a6f5d2d75-iqbpo4.jpg",
-        title: "general supervisor",
+        title: "General supervisor",
         name: 'Ahmed Khairy'
     },
     {
         href: "https://utfs.io/f/dc4feabe-0478-4575-a932-d98762d2afea-1zbfv.jpeg",
-        title: "Tec head",
+        title: "Technical head",
         name: 'Yahia khaild'
     },
     {
@@ -39,28 +39,33 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/4c165aba-c8f1-4fff-9cb9-fd289680570e-1t0kg5.jpg",
-        title: "manger ",
+        title: "Manger ",
         name: 'Ahmed salah  '
     },
 
     {
         href: "https://utfs.io/f/16b463e3-c2e8-40e6-afcd-f7a3a08d7822-5fs0do.jpg",
-        title: "vice Oc head ",
+        title: "Vice OC head ",
         name: 'Haidy hosaam'
     },
     {
         href: "https://utfs.io/f/593afd26-2112-4c43-831f-03f35ec78727-57pq01.24.48_ea52dbfc.jpg",
-        title: "media head",
+        title: "Media head",
         name: 'Menna Elbanna'
     },
     {
         href: "https://utfs.io/f/f4b8a493-580e-4e98-8653-19dd31b31766-2859g.jpg",
-        title: "Oc commuinty ",
+        title: "OC commuinty ",
         name: 'Ziad sameh'
     },
     {
+        href: "https://utfs.io/f/be8f9ee0-6cc1-4723-9947-d8f5d54492d5-57ppzz.04.49_99b3ce1f.jpg",
+        title: "Vice Pr Head ",
+        name: 'Mohamed Ibrahim'
+    },
+    {
         href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
-        title: " ",
+        title: "Manger",
         name: 'Ibrahim Hamdy'
     },
 
