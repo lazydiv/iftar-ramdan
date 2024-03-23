@@ -23,16 +23,18 @@ export default async function Orders() {
         <div className="flex flex-wrap ">
             <SearchComp data={
                 orders.map((order) => (
-                    {
+                    order
+                    // {
 
-                        name: order.title,
-                        phone: order.phone,
-                        mealType: order.mealType,
-                        id: order.id,
+                    //     title: order.title,
+                    //     phone: order.phone,
+                    //     mealType: order.mealType,
+                    //     id: order.id,
 
-                        status: order.status,
-                        // createdAt: order.createdAt,
-                    }
+                    //     status: order.status,
+                    //     uniId: order.uniId,
+                    //     // createdAt: order.createdAt,
+                    // }
                 ))
             } />
             {orders.map((order) => (

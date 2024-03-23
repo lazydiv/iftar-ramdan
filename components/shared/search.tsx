@@ -5,19 +5,12 @@ import { useCallback, useEffect, useState } from "react";
 import { CommandGroup, CommandItem, CommandDialog, CommandEmpty, CommandInput, CommandList } from "../ui/command";
 import { Span } from "next/dist/trace";
 import { redirect, useRouter } from "next/navigation";
+import { Order } from "@prisma/client";
 
 
 interface SearchCompProps {
 
-    data: {
-
-        name: string
-        phone: string
-        status: string
-        id: string
-        mealType: string
-
-    }[]
+    data: Order[]
 
 }
 
@@ -47,6 +40,7 @@ export const SearchComp = ({
     }, [])
 
     const router = useRouter()
+    console.log(data)
 
 
     return (
@@ -82,33 +76,35 @@ export const SearchComp = ({
                 <CommandList>
 
                     <CommandGroup heading="الطلابات">
-                        {data.map(({ name, phone, mealType, status, id }) => {
+
+                        {data.map((item) => {
                             if (!data?.length) return null
                             return (
-                                <CommandItem key={name}
+                                <CommandItem key={item.id}
                                     onSelect={() => {
                                         runCommand(() => {
-                                            router.push(`/admin/orders/${id}`)
+                                            router.push(`/admin/orders/${item.id}`)
                                         })
                                     
                                     }}
                                     className="flex w-full container  mt-2">
                                     <p className='w-[25%]'>
-                                        {name}
+                                        {item.title}
                                     </p>
                                     <p className='w-[25%]'>
-                                        {phone}
+                                        {item.phone}
                                     </p>
                                     <p className='w-[25%]'>
-                                        {status === 'pending' ? 'لم يتم الدفع' : 'تم الدفع'}
+                                        {item.status === 'pending' ? 'لم يتم الدفع' : 'تم الدفع'}
+                                        <p className="hidden">
+
+                                        {item.uniId}
+                                        </p>
                                     </p>
                                     <p>
-                                        {mealType === 'meat' ? 'لحمه' : mealType === 'chiken' ? 'فراخ' : mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}
+                                        {item.mealType === 'meat' ? 'لحمه' : item.mealType === 'chiken' ? 'فراخ' : item.mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}
                                     </p>
-                                    <div>
-
-                                    </div>
-
+                                   
                                 </CommandItem>
                             )
                         })}
