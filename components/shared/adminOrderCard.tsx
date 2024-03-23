@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { Order } from '@prisma/client'
 import { MakeSure } from './makeSure'
+import { PaymentVerf } from './paymentVerf'
 
 interface OrderCardProps {
    order: Order
@@ -58,7 +59,7 @@ const OrderCard = (
                 <div className="flex  items-center gap-2  rounded-md  text-secondary-foreground">
                    
                     <MakeSure order={order}/>
-                    <Button 
+                    {/* <Button 
                     variant="secondary" 
                     className={cn(order.status !== "pending" ? 'bg-green-600' : 'bg-yellow-600')}
                     onClick={()=> onSubmit()}
@@ -67,7 +68,8 @@ const OrderCard = (
                         {
                             order.status === "pending" ? "لم يتم دفع" : "تم الدفع"
                         }
-                    </Button>
+                    </Button> */}
+                    <PaymentVerf order={order}/>
 
                 </div>
             </CardHeader>
