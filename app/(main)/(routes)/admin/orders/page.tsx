@@ -6,6 +6,9 @@ import { db } from "@/lib/db"
 import axios from "axios"
 import { redirect, useRouter } from "next/navigation"
 import { SearchComp } from "@/components/shared/search"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
+// import { OrderBy } from "@/components/shared/orderBy"
 // import router from "next/router"
 
 export default async function Orders() {
@@ -17,26 +20,23 @@ export default async function Orders() {
     if (profile.role !== "ADMIN") redirect("/")
 
 
-    const orders = await db.order.findMany({})
+    const orders = await db.order.findMany({
+        orderBy: {
+            createdAt: "desc"
+        }
+    })
 
     return (
         <div className="flex flex-wrap ">
+
+
             <SearchComp data={
                 orders.map((order) => (
                     order
-                    // {
-
-                    //     title: order.title,
-                    //     phone: order.phone,
-                    //     mealType: order.mealType,
-                    //     id: order.id,
-
-                    //     status: order.status,
-                    //     uniId: order.uniId,
-                    //     // createdAt: order.createdAt,
-                    // }
                 ))
             } />
+
+
             {orders.map((order) => (
                 <OrderCard key={order.id} order={order} />
             ))}

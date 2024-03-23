@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { Order } from '@prisma/client'
+import { MakeSure } from './makeSure'
 
 interface OrderCardProps {
    order: Order
@@ -45,21 +46,7 @@ const OrderCard = (
             console.log(error);
         }
     }
-    const onSubmitDelete = async () => {
-        
-        try {
-           
-            await axios.delete('/api/orders', { data: order });
-            
-            console.log()
-            router.refresh()
-        
-        } catch (error) {
 
-
-            console.log(error);
-        }
-    }
     if (!isMounted) return null
     return (
         <Card className="mt-10 container lg:w-[90%] mx-auto">
@@ -69,14 +56,8 @@ const OrderCard = (
                     
                 </div>
                 <div className="flex  items-center gap-2  rounded-md  text-secondary-foreground">
-                    <Button 
-                    variant="secondary" 
-                    className={cn( 'bg-red-500')}
-                    onClick={()=> onSubmitDelete()}
-                    >
-
-                        الغاء
-                    </Button>
+                   
+                    <MakeSure order={order}/>
                     <Button 
                     variant="secondary" 
                     className={cn(order.status !== "pending" ? 'bg-green-600' : 'bg-yellow-600')}
