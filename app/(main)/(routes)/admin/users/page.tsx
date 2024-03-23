@@ -1,11 +1,9 @@
 
 
-import OrderCard from "@/components/shared/adminOrderCard"
 import UserCard from "@/components/shared/userCard"
 import { currentProfile } from "@/lib/current-user"
 import { db } from "@/lib/db"
-import axios from "axios"
-import { redirect, useRouter } from "next/navigation"
+import { redirect } from "next/navigation"
 // import router from "next/router"
 
 export default async function Orders() {

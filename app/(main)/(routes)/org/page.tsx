@@ -44,7 +44,7 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/3d8bb983-265f-4a9b-9072-4a419d6988d8-2oo.jpg",
-        title: "PR manager",
+        title: "PR Head",
         name: 'Mahmoud matter'
     },
     {
@@ -80,7 +80,7 @@ const itemsSt = [
     },
     {
         href: "https://utfs.io/f/052ca705-7223-45f8-99a7-01264deae8dd-tgw0x.jpg",
-        title: "Vice Media Head",
+        title: "Manger",
         name: 'Mohamed Walid'
     },
 
