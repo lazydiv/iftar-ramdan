@@ -80,11 +80,11 @@ const OrderCard = (
                         <span>{order.title}</span>
                     </p>
                     <p>
-                        <span>رقم القومي: </span>
+                        <span>رقم الطلب: </span>
                         <span>{order.phone}</span>
                     </p>
                     <p>
-                        <span> كود الطالب </span>
+                        <span> الرفم القومي:</span>
                         <span>{order.uniId}</span>
                     </p>
                     <p>
