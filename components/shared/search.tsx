@@ -92,13 +92,13 @@ export const SearchComp = ({
                                         {item.title}
                                     </p>
                                     <p className='w-[25%]'>
-                                        {item.phone}
+                                        {item.uniId}
                                     </p>
                                     <p className='w-[25%]'>
                                         {item.status === 'pending' ? 'لم يتم الدفع' : 'تم الدفع'}
                                         <p className="hidden">
 
-                                        {item.uniId}
+                                        {item.phone}
                                         </p>
                                     </p>
                                     <p>

@@ -80,7 +80,7 @@ const OrderCard = (
                         <span>{order.title}</span>
                     </p>
                     <p>
-                        <span>رقم الطلب: </span>
+                        <span>رقم القومي: </span>
                         <span>{order.phone}</span>
                     </p>
                     <p>
