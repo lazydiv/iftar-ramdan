@@ -40,8 +40,7 @@ export const SearchComp = ({
     }, [])
 
     const router = useRouter()
-    console.log(data)
-
+   
 
     return (
         <>
@@ -75,7 +74,7 @@ export const SearchComp = ({
 
                 <CommandList>
 
-                    <CommandGroup heading="الطلابات">
+                    <CommandGroup heading="الطلابات" >
 
                         {data.map((item) => {
                             if (!data?.length) return null
@@ -87,7 +86,12 @@ export const SearchComp = ({
                                         })
                                     
                                     }}
-                                    className="flex w-full container  mt-2">
+                                    
+                                    // i want when the mouse leaves he selects the first one again
+                                 
+
+                                    className="flex w-full container  mt-2"
+                                    >
                                     <p className='w-[25%]'>
                                         {item.title}
                                     </p>
@@ -102,7 +106,7 @@ export const SearchComp = ({
                                         </p>
                                     </p>
                                     <p>
-                                        {item.mealType === 'meat' ? 'لحمه' : item.mealType === 'chiken' ? 'فراخ' : item.mealType === 'fasting' ? 'صيامي' : 'ميكس لحوم وفراخ'}
+                                    <span>{item.mealType === 'meat' ? 'عرض المال الحلال' : item.mealType === 'chiken' ? 'عرض الحشاشين' : item.mealType === 'اكل صيامي' ? 'صيامي':  'عرض الاقوي'}</span>
                                     </p>
                                    
                                 </CommandItem>

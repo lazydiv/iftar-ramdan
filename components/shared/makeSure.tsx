@@ -46,7 +46,7 @@ export function MakeSure({ order }: MakeSureProps) {
                 <AlertDialogHeader>
                     <AlertDialogTitle>هل انت متاكد من حذف الطلب؟ </AlertDialogTitle>
                     <AlertDialogDescription>
-                        لا يمكن التراجع عن هذا الإجراء. سيؤدي هذا إلى حذف الطلب نهائيًاز
+                        لا يمكن التراجع عن هذا الإجراء. سيؤدي هذا إلى حذف الطلب نهائيًا
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

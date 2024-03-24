@@ -220,13 +220,13 @@ export const PlaceOrder = () => {
                                         <SelectContent>
 
                                             <SelectItem key={type} value='chiken' className='capitalize'>
-                                                فراخ فقط
+                                                عرض الحشاشين
                                             </SelectItem>
                                             <SelectItem key={type} value='meat' className='capitalize'>
-                                                لحوم فقط
+                                                 عرض المال الحلال
                                             </SelectItem>
                                             <SelectItem key={type} value='mix' className='capitalize'>
-                                                ميكس فراخ ولحوم
+                                                عرض الاقوي
                                             </SelectItem>
                                             <SelectItem key={type} value='fasting' className='capitalize'>
                                                 اكل صيامي
@@ -241,7 +241,7 @@ export const PlaceOrder = () => {
                         />
                         </div>
                         <DialogDescription className='bg-primary/50 text-white p-4 rounded-xl '>
-                            سعر الوجبة: 200 جنيه
+                            {form.getValues('mealType') === 'chiken' ? 'السعر: 150 جنية' : form.getValues('mealType') === 'meat' ? 'السعر: 150 جنية' : form.getValues('mealType') === 'mix' ? 'السعر: 160 جنية' : form.getValues('mealType') === 'fasting' ? 'السعر: 150 جنية' : 'اختر لمعرفة سعر الوجبة'} 
                         </DialogDescription>
                         <DialogFooter className='py-4'>
                             <Button variant={'primary'} className='w-full' disabled={isLoading}>اطلب</Button>

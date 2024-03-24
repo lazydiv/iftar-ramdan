@@ -73,16 +73,16 @@ const itemsSt = [
         title: "OC Head",
         name: 'Ziad Sameh'
     },
-    {
-        href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
-        title: "Manger",
-        name: 'Ibrahim Hamdy'
-    },
-    {
-        href: "https://utfs.io/f/052ca705-7223-45f8-99a7-01264deae8dd-tgw0x.jpg",
-        title: "Manger",
-        name: 'Mohamed Walid'
-    },
+    // {
+    //     href: "https://utfs.io/f/13d14ea2-cad8-490c-b7da-3f7eae5604e9-qo29ok.jpg",
+    //     title: "Manger",
+    //     name: 'Ibrahim Hamdy'
+    // },
+    // {
+    //     href: "https://utfs.io/f/052ca705-7223-45f8-99a7-01264deae8dd-tgw0x.jpg",
+    //     title: "Manger",
+    //     name: 'Mohamed Walid'
+    // },
 
 ]
 
