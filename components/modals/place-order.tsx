@@ -28,6 +28,7 @@ import { useModal } from '@/hooks/use-model-store';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { DialogDescription } from '@radix-ui/react-dialog';
 import { useToast } from '../ui/use-toast';
+import { useState } from 'react';
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -49,6 +50,7 @@ const formSchema = z.object({
 
 export const PlaceOrder = () => {
     const { isOpen, type, onClose } = useModal();
+    
     const router = useRouter();
 
     const ismodalOpen = isOpen && type === 'placeOrder';
@@ -69,6 +71,7 @@ export const PlaceOrder = () => {
 
 
     const isLoading = form.formState.isSubmitting;
+    
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
       
@@ -104,7 +107,13 @@ export const PlaceOrder = () => {
         form.reset()
         onClose()
     }
+    const [meal, setMeal] = useState('')
 
+
+    const onChange = (param: string) => {
+        setMeal(param)
+        console.log(meal)
+    }
 
     return (
         <Dialog open={ismodalOpen} onOpenChange={onClosemodal}>
@@ -206,6 +215,7 @@ export const PlaceOrder = () => {
                                         disabled={isLoading}
                                         onValueChange={field.onChange}
                                         defaultValue={field.value}
+
                                     >
                                         <FormControl>
                                             <SelectTrigger
@@ -219,17 +229,17 @@ export const PlaceOrder = () => {
                                         </FormControl>
                                         <SelectContent>
 
-                                            <SelectItem key={type} value='chiken' className='capitalize'>
-                                                عرض الحشاشين
+                                            <SelectItem key={type} onSelect={field.onChange} onClick={field.onChange} value='chiken' className='capitalize'>
+                                                عرض الحشاشين 150 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='meat' className='capitalize'>
-                                                 عرض المال الحلال
+                                            <SelectItem key={type} value='meat' onSelect={field.onChange}   className='capitalize'>
+                                                عرض المال الحلال 150 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='mix' className='capitalize'>
-                                                عرض الاقوي
+                                            <SelectItem key={type} value='mix' onSelect={field.onChange} className='capitalize'>
+                                                عرض الاقوي 160 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='fasting' className='capitalize'>
-                                                اكل صيامي
+                                            <SelectItem key={type} value='fasting' onSelect={field.onChange} onClick={() => onChange('fasting')} className='capitalize'>
+                                                اكل صيامي 150 جنيه
                                             </SelectItem>
 
                                         </SelectContent>
@@ -240,14 +250,12 @@ export const PlaceOrder = () => {
 
                         />
                         </div>
-                        <DialogDescription className='bg-primary/50 text-white p-4 rounded-xl '>
-                            {form.getValues('mealType') === 'chiken' ? 'السعر: 150 جنية' : form.getValues('mealType') === 'meat' ? 'السعر: 150 جنية' : form.getValues('mealType') === 'mix' ? 'السعر: 160 جنية' : form.getValues('mealType') === 'fasting' ? 'السعر: 150 جنية' : 'اختر لمعرفة سعر الوجبة'} 
-                        </DialogDescription>
                         <DialogFooter className='py-4'>
                             <Button variant={'primary'} className='w-full' disabled={isLoading}>اطلب</Button>
                         </DialogFooter>
                     </form>
                 </Form>
+                       
             </DialogContent>
         </Dialog>
     )
