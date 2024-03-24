@@ -16,8 +16,8 @@ const Personal = ({ className, items, ...props }: PersnalProps) => {
     return (
         <>
             {items.map((item) => (
-                <div className='text-center m-10 font-bold' key={item.title}>
-                    <UserAvatar  src={item.href}  className=' w-52 h-52 object-cover' />
+                <div className='text-center m-10 flex-col justify-center items-center font-bold' key={item.title}>
+                    <UserAvatar  src={item.href}  className=' w-52 h-52 mx-auto mb-5 object-cover' />
                     {item.title}
                     <br />
                     <h5>

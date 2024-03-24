@@ -94,16 +94,16 @@ const page = () => {
 
 
     return (
-        <div className='container mx-auto mt-12'>
-            <div className='flex m-5 justify-center  flex-wrap'>
+        <div className='container  mt-12 '>
+            <div className='flex justify-center  flex-wrap flex-col'>
                 <div className='w-full text-center  text-xl font-bold text-yellow-500 text-primary my-10'>
                     Faculty Heads
                 </div>
                 <Personal items={items} />
-                <div className='w-full text-center  text-xl font-bold text-primary my-10'>
+                {/* <div className='w-full text-center  text-xl font-bold text-primary my-10'>
                     Orgnization Heads
                 </div>
-                <Personalstudent items={itemsSt} className='' />
+                <Personalstudent items={itemsSt} className='' /> */}
 
 
             </div>
