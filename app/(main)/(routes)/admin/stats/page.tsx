@@ -81,15 +81,15 @@ export default async function Orders() {
             value: acceptedOrders.length.toString()
         },
         {
-            title: " الوجبات الدجاج",
+            title: " الوجبات الحشاشين",
             value: chikenOrders.length.toString()
         },
         {
-            title: "وجبات اللحوم",
+            title: "وجبات المال الحلال",
             value: meatOrders.length.toString()
         },
         {
-            title: "وجبات الميكس",
+            title: "وجبات الاقوي",
             value: mixOrders.length.toString()
         },
         {
@@ -97,11 +97,11 @@ export default async function Orders() {
             value: fastingOrders.length.toString()
         },
         {
-            title: " وجبات اللحوم المقبولة",
+            title: " وجبات المال الحلال المقبولة",
             value: acceptedMeatOrders.length.toString()
         },
         {
-            title: "وجبات الدجاج المقبولة",
+            title: "وجبات الحشاشين المقبولة",
             value: acceptedChikenOrder.length.toString()
         },
         {
@@ -109,7 +109,7 @@ export default async function Orders() {
             value: acceptedFastingOrders.length.toString()
         },
         {
-            title: "وجبات الميكس المقبولة",
+            title: "وجبات الاقوي المقبولة",
             value: acceptedMixOrders.length.toString()
         }
 
@@ -166,7 +166,7 @@ export default async function Orders() {
                     </svg>
                 </CardHeader>
                 <CardContent className="">
-                    <div className="text-2xl font-bold">Le. {acceptedOrders.length * 200}</div>
+                    <div className="text-2xl font-bold">Le. {acceptedChikenOrder.length * 150 + acceptedMeatOrders.length * 150 + acceptedFastingOrders.length * 150 + acceptedMixOrders.length * 160 }</div>
                     <p className="text-xs mt-1 text-muted-foreground">
                         from last month
                     </p>
