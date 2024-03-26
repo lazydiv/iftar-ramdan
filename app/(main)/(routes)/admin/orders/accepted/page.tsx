@@ -25,7 +25,7 @@ const orderIdPage = async (
 
     const orders = await db.order.findMany({
         where: {
-            id: params.orderId,
+            // id: params.orderId,
             status: "paid"
         },
         orderBy: {

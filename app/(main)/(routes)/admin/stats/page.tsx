@@ -46,19 +46,23 @@ export default async function Orders() {
         },
         {
             title: " الوجبات الحشاشين",
-            value: chikenOrders.length.toString()
+            value: chikenOrders.length.toString(),
+            href: "/admin/orders/chicken"
         },
         {
             title: "وجبات المال الحلال",
-            value: meatOrders.length.toString()
+            value: meatOrders.length.toString(),
+            href: "/admin/orders/meat"
         },
         {
             title: "وجبات الاقوي",
-            value: mixOrders.length.toString()
+            value: mixOrders.length.toString(),
+            href: "/admin/orders/mix"
         },
         {
             title: "وجبات الصيامي",
-            value: fastingOrders.length.toString()
+            value: fastingOrders.length.toString(),
+            href: "/admin/orders/fasting"
         },
         {
             title: " وجبات المال الحلال المقبولة",

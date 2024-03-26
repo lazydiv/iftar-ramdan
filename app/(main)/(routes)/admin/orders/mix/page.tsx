@@ -1,37 +1,48 @@
 
 
 import OrderCard from "@/components/shared/adminOrderCard"
+import { SearchComp } from "@/components/shared/search"
 import { currentProfile } from "@/lib/current-user"
 import { db } from "@/lib/db"
-import axios from "axios"
-import { redirect, useRouter } from "next/navigation"
-import { SearchComp } from "@/components/shared/search"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
-// import { OrderBy } from "@/components/shared/orderBy"
-// import router from "next/router"
-
-export default async function Orders() {
-    // const router = useRouter()
+import { Order } from "@prisma/client"
+import { redirect } from "next/navigation"
+interface orderIdProps {
+    params: {
+        orderId: string;
+    }
+};
+const orderIdPage = async (
+    {
+        params
+    }: orderIdProps
+) => {
     const profile = await currentProfile()
+
     if (!profile) {
         return redirect("/sign-in")
     }
     if (profile.role !== "ADMIN") redirect("/")
 
-
     const orders = await db.order.findMany({
         where: {
-            status: "pending"
+            // id: params.orderId,
+            mealType: "mix"
         },
         orderBy: {
             createdAt: "desc"
         }
     })
+    // const acceptedOrders = order?.filter((status) => status === "paid")
+    if (!orders) {
+        return (
+            <div className="flex  justify-center text-primary mt-14 text-xl font-bold w-full ">لا يوجد طلبات</div>
+        )
+    }
+
+
 
     return (
         <div className="flex flex-wrap ">
-
 
             <SearchComp data={
                 orders.map((order) => (
@@ -46,10 +57,10 @@ export default async function Orders() {
 
 
 
-            {orders.length === 0 && (
-                <div className="flex  justify-center text-primary mt-14 text-xl font-bold w-full ">لا يوجد طلبات</div>
-            )}
+
         </div>
 
     )
 }
+
+export default orderIdPage;
