@@ -21,9 +21,7 @@ export default async function Orders() {
 
 
     const orders = await db.order.findMany({
-        where: {
-            status: "pending"
-        },
+      
         orderBy: {
             createdAt: "desc"
         }
