@@ -1,4 +1,5 @@
 'use client'
+import { End } from '@/components/shared/End'
 import { Instructions } from '@/components/shared/instructions'
 import { Button } from '@/components/ui/button'
 import { useModal } from '@/hooks/use-model-store'
@@ -32,6 +33,7 @@ const Intro = () => {
                     <SignedIn>
 
                         <Button
+                            disabled
                             onClick={() => onOpen('placeOrder')}
                             className="w-32 text-xl text-white"
 
@@ -50,6 +52,7 @@ const Intro = () => {
                         
                     </SignedOut>
                    
+                    <End />
                     <Instructions />
                     <span>
 
