@@ -110,8 +110,8 @@ export const PlaceOrder = () => {
     const [meal, setMeal] = useState('')
 
 
-    const onChange = (param: string) => {
-        setMeal(param)
+    const priceHandler = (price: string) => {
+        setMeal(price)
         console.log(meal)
     }
 
@@ -229,16 +229,16 @@ export const PlaceOrder = () => {
                                         </FormControl>
                                         <SelectContent>
 
-                                            <SelectItem key={type} onSelect={field.onChange} onClick={field.onChange} value='chiken' className='capitalize'>
+                                            <SelectItem key={type}   value='chiken' className='capitalize'>
                                                 عرض الحشاشين 150 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='meat' onSelect={field.onChange}   className='capitalize'>
+                                            <SelectItem key={type} value='meat'   className='capitalize'>
                                                 عرض المال الحلال 150 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='mix' onSelect={field.onChange} className='capitalize'>
+                                            <SelectItem key={type} value='mix' className='capitalize'>
                                                 عرض الاقوي 160 جنيه
                                             </SelectItem>
-                                            <SelectItem key={type} value='fasting' onSelect={field.onChange} onClick={() => onChange('fasting')} className='capitalize'>
+                                            <SelectItem key={type} value='fasting'  onClick={() => priceHandler('fasting')} className='capitalize'>
                                                 اكل صيامي 150 جنيه
                                             </SelectItem>
 

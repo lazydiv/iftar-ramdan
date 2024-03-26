@@ -1,12 +1,13 @@
 
-import React from 'react'
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/card'
-import Icon from './IconCom'
+import { useRouter } from 'next/navigation'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
+import Link from 'next/link'
 
 interface StatCardProps {
     stats: {
         title: string,
-        value: string
+        value: string,
+        href?: string
     }[]
 
 }
@@ -15,11 +16,13 @@ interface StatCardProps {
 const StatCard = ({
     stats
 }: StatCardProps) => {
+
+    
     return (
         <>
 
             {stats.map((stat) => (
-                
+                    <Link href={stat.href || ''} key={stat.title}>
                     <Card key={stat.title} className='w-full md:max-w-56'>
                         <CardHeader className="flex flex-col items-center justify-between space-y-0   pb-2">
                             <CardTitle className="text-sm font-medium">
@@ -34,6 +37,7 @@ const StatCard = ({
                         </CardContent>
                     </Card>
                 
+                </Link>
             ))}
         </>
     )

@@ -23,62 +23,26 @@ export default async function Orders() {
     const users = await db.user.findMany({})
     const acceptedOrders = order.filter((order) => order.status === "paid")
     const pendingOrders = order.filter((order) => order.status === "pending" )
-    const acceptedMeatOrders = await db.order.findMany({
-        where: {
-            status: "paid",
-            mealType: 'meat'
-        }
-    })
-    const acceptedMixOrders = await db.order.findMany({
-        where: {
-            status: "paid",
-            mealType: 'mix'
-        }
-    })
-
-    const acceptedChikenOrder = await db.order.findMany({
-        where: {
-            status: "paid",
-            mealType: 'chiken'
-        }
-    })
-    const meatOrders = await db.order.findMany({
-        where: {
-         
-            mealType: 'meat'
-        }
-    })
-    const chikenOrders = await db.order.findMany({
-        where: {
-            mealType: 'chiken'
-        }
-    })
-    const mixOrders = await db.order.findMany({
-        where: {
-            mealType: 'mix'
-        }
-    })
-    const fastingOrders = await db.order.findMany({
-        where: {
-            mealType: 'fasting'
-        }
-    })
-    const acceptedFastingOrders = await db.order.findMany({
-        where: {
-            status: "paid",
-            mealType: 'fasting'
-        }
-    })
+    const acceptedMeatOrders = order.filter((order) => order.status === "paid" && order.mealType === 'meat')
+    const acceptedMixOrders = order.filter((order) => order.status === "paid" && order.mealType === 'mix')
+    const acceptedChikenOrder = order.filter((order) => order.status === "paid" && order.mealType === 'chiken')
+    const meatOrders = order.filter((order) => order.mealType === 'meat')
+    const chikenOrders = order.filter((order) => order.mealType === 'chiken')
+    const mixOrders = order.filter((order) => order.mealType === 'mix')
+    const fastingOrders = order.filter((order) => order.mealType === 'fasting')
+    const acceptedFastingOrders = order.filter((order) => order.status === "paid" && order.mealType === 'fasting')
 
     
     const Stats = [
         {
             title: "الوجبات المعلقة",
-            value: pendingOrders.length.toString()
+            value: pendingOrders.length.toString(),
+            href: "/admin/orders/pending"
         },
         {
             title: "الوجبات المقبولة",
-            value: acceptedOrders.length.toString()
+            value: acceptedOrders.length.toString(),
+            href: "/admin/orders/accepted"
         },
         {
             title: " الوجبات الحشاشين",

@@ -73,7 +73,7 @@ const OrderCard = (
                     </p>
                     <p>
                         <span> نوع الوجبة : </span>
-                        <span>{order.mealType === 'meat' ? 'عرض المال الحلال 150 جنية': order.mealType === 'chiken' ? "عرض الحشاشين 150 جنية" : order.mealType === 'اكل صيامي' ? "اكل صيامي 150 جنيه":  "عرض الاقوي 160 جنية"}</span>
+                        <span>{order.mealType === 'meat' ? 'عرض المال الحلال 150 جنية': order.mealType === 'chiken' ? "عرض الحشاشين 150 جنية" : order.mealType === 'fasting' ? "اكل صيامي 150 جنيه":  "عرض الاقوي 160 جنية"}</span>
                     </p>
                     <div> وقت الطلب:  {order.createdAt.toString()}</div>
                     <p className='text-black/50 dark:text-white/50 mt-5 text-sm'>
