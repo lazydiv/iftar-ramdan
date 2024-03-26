@@ -42,7 +42,7 @@ const orderIdPage = async (
 
 
     return (
-        <div className="flex flex-wrap ">
+        <div className="flex flex-col mt-10">
 
             <SearchComp data={
                 orders.map((order) => (

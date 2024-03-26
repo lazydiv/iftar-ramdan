@@ -157,10 +157,10 @@ export default async function Orders() {
                     </p>
                 </CardContent>
             </Card>
-            <div className="w-full flex flex-wrap  gap-10">
+            {/* <div className="w-full flex flex-wrap  gap-10"> */}
 
             <StatCard stats={Stats} />
-            </div>
+            {/* </div> */}
 
             
 
