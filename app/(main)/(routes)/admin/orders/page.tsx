@@ -1,17 +1,11 @@
 
 
 import OrderCard from "@/components/shared/adminOrderCard"
+import DownloadExcel from "@/components/shared/download"
 import { SearchComp } from "@/components/shared/search"
-import { Button } from "@/components/ui/button"
 import { currentProfile } from "@/lib/current-user"
 import { db } from "@/lib/db"
-import XLSX from "xlsx";
 import { redirect } from "next/navigation"
-import { NextResponse } from "next/server"
-import axios from "axios"
-import { Order } from "@prisma/client"
-import { Download } from "lucide-react"
-import  DownloadExcel  from "@/components/shared/download"
 // import { OrderBy } from "@/components/shared/orderBy"
 // import router from "next/router"
 
@@ -28,6 +22,12 @@ export default async function Orders() {
     if (profile.role !== "ADMIN") redirect("/")
     
     
+    const excelOrders = await db.order.findMany({
+        
+        orderBy: {
+            createdAt: "desc"
+        }
+    })
     const orders = await db.order.findMany({
         
         orderBy: {
@@ -50,7 +50,7 @@ export default async function Orders() {
                         ))
                     } />
                 </div>
-                    <DownloadExcel orders={orders} />
+                    <DownloadExcel orders={excelOrders} />
                 
             </div>
 
