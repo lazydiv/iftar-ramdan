@@ -43,11 +43,11 @@ export const SearchComp = ({
    
 
     return (
-        <>
+        <div className="">
             <button
                 onClick={() => setOpen(true)}
                 className="group px-2 py-2 rounded-md bg-primary/70  flex items-center
-         gap-x-2 container lg:w-[90%] mt-10 hover:bg-zinc-100/10 dark:hover:bg-zinc-700 transition">
+         gap-x-2 container lg:w-[90%] hover:bg-zinc-100/10 dark:hover:bg-zinc-700 transition">
 
                 <Search className="w-4 h-4 text-zinc-200 dark:text-zinc-400" />
                 <p className="font-semibold text-sm text-zinc-100 dark:text-zinc-400 group-hover:text-zinc-600
@@ -62,6 +62,7 @@ export const SearchComp = ({
                     <span className="text-xs">CTRL</span>K
                 </kbd>
             </button>
+            
             <CommandDialog open={open} onOpenChange={setOpen}>
                 <CommandInput
                     placeholder="
@@ -115,6 +116,6 @@ export const SearchComp = ({
                     </CommandGroup>
                 </CommandList>
             </CommandDialog>
-        </>
+        </div>
     )
 }

@@ -1,41 +1,58 @@
 
 
 import OrderCard from "@/components/shared/adminOrderCard"
+import { SearchComp } from "@/components/shared/search"
+import { Button } from "@/components/ui/button"
 import { currentProfile } from "@/lib/current-user"
 import { db } from "@/lib/db"
+import XLSX from "xlsx";
+import { redirect } from "next/navigation"
+import { NextResponse } from "next/server"
 import axios from "axios"
-import { redirect, useRouter } from "next/navigation"
-import { SearchComp } from "@/components/shared/search"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
+import { Order } from "@prisma/client"
+import { Download } from "lucide-react"
+import  DownloadExcel  from "@/components/shared/download"
 // import { OrderBy } from "@/components/shared/orderBy"
 // import router from "next/router"
 
+
 export default async function Orders() {
+
+    // const orders = await axios.get('/api/orders')
+    
     // const router = useRouter()
     const profile = await currentProfile()
     if (!profile) {
         return redirect("/sign-in")
     }
     if (profile.role !== "ADMIN") redirect("/")
-
-
+    
+    
     const orders = await db.order.findMany({
-      
+        
         orderBy: {
             createdAt: "desc"
         }
     })
+    
+
 
     return (
         <div className="flex flex-wrap ">
 
+            <div className="md:flex-row flex w-full  md:w-[90%] flex-col md:mr-10   space-y-5 md:space-y-0 mt-10">
 
-            <SearchComp data={
-                orders.map((order) => (
-                    order
-                ))
-            } />
+                <div className="flex-1 ">
+
+                    <SearchComp data={
+                        orders.map((order) => (
+                            order
+                        ))
+                    } />
+                </div>
+                    <DownloadExcel orders={orders} />
+                
+            </div>
 
 
             {orders.map((order) => (
