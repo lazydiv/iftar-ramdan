@@ -15,21 +15,20 @@ import { Order } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-interface PaymentVerfProps {
+interface attendProps {
     order: Order
 }
 
 
 
 
-export function PaymentVerf({ order }: PaymentVerfProps) {
+export function Attend({ order }: attendProps) {
     const router = useRouter()
-    
     const onSubmit = async () => {
 
         try {
 
-            await axios.patch('/api/orders', {data: order, status: order.status === "pending" ? "paid" : "pending"});
+            await axios.patch('/api/orders', {data: order, status: order.status === "attended" ? "paid" : "attended"});
 
             router.refresh()
 
@@ -47,11 +46,11 @@ export function PaymentVerf({ order }: PaymentVerfProps) {
                 <Button
                     variant="secondary"
 
-                    className={cn(order.status !== "pending" ? 'bg-green-600' : 'bg-yellow-600', 'text-white')}
+                    className={cn(order.status === "attended" ? 'bg-blue-600' : 'bg-blue-600/10', 'text-white')}
                 >
 
                     {
-                        order.status === "pending" ? "لم يتم دفع" : "تم الدفع"
+                        order.status === "attended" ? "تم الحضور" : "لم يتم الحضور"
                     }
                 </Button>
             </AlertDialogTrigger>

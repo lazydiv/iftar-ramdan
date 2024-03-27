@@ -10,7 +10,7 @@ import { ScrollArea } from "../ui/scroll-area"
 
 export function End() {
     return (
-        <Alert variant="default" className="bg-blue-200/50 mt-5  max-h-60 max-w-[850px]  
+        <Alert variant="default" className="dark:bg-blue-400/50 bg-blue-200/50 mt-5  max-h-60 max-w-[850px]  
         space-y-2  text-blue-800 dark:text-blue-200
          border-blue-400">
             <AlertCircle className="h-4 w-4" />

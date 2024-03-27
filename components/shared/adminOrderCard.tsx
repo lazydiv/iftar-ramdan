@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation'
 import { Order } from '@prisma/client'
 import { MakeSure } from './makeSure'
 import { PaymentVerf } from './paymentVerf'
+import { Attend } from './attended'
 
 interface OrderCardProps {
    order: Order
@@ -51,7 +52,7 @@ const OrderCard = (
     if (!isMounted) return null
     return (
         <Card className="mt-10 container lg:w-[90%] mx-auto">
-            <CardHeader className="grid  grid-cols-[1fr_125px] items-start gap-4 space-y-0">
+            <CardHeader className="grid  grid-cols-[1fr_250px] items-start gap-4 space-y-0">
                 <div className="space-y-5">
                     <CardTitle className="text-primary">وجبة افطار</CardTitle>
                     
@@ -69,6 +70,7 @@ const OrderCard = (
                             order.status === "pending" ? "لم يتم دفع" : "تم الدفع"
                         }
                     </Button> */}
+                    <Attend order={order}/>
                     <PaymentVerf order={order}/>
 
                 </div>

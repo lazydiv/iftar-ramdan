@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { currentProfile } from "@/lib/current-user";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Order } from '@prisma/client';
 
 export async function POST(req: Request) {
     try {
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
 export async function PATCH(req: Request) {
     try {
-        const { id, status } = await req.json();
+        const { data, status } = await req.json();
 
         const profile = await currentProfile();
         if (!profile || profile.role !== 'ADMIN') {
@@ -57,10 +57,10 @@ export async function PATCH(req: Request) {
         const order = await db.order.update({
 
             where: {
-                id
+                id: data.id
             },
             data: {
-                status: status === "pending" ? "paid" : "pending"
+                status: status
             }
 
         })
