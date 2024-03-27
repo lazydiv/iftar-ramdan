@@ -51,13 +51,13 @@ const OrderCard = (
 
     if (!isMounted) return null
     return (
-        <Card className="mt-10 container lg:w-[90%] mx-auto">
-            <CardHeader className="grid  grid-cols-[1fr_250px] items-start gap-4 space-y-0">
+        <Card className="mt-10 container  lg:w-[90%] mx-auto">
+            <CardHeader className="grid  md:grid-cols-[1fr_250px] items-start gap-4 space-y-0">
                 <div className="space-y-5">
                     <CardTitle className="text-primary">وجبة افطار</CardTitle>
                     
                 </div>
-                <div className="flex  items-center gap-2  rounded-md  text-secondary-foreground">
+                <div className="flex  items-center gap-2  rounded-md   text-secondary-foreground">
                    
                     <MakeSure order={order}/>
                     {/* <Button 
