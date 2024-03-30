@@ -21,16 +21,16 @@ export default async function Orders() {
 
     const order = await db.order.findMany({})
     const users = await db.user.findMany({})
-    const acceptedOrders = order.filter((order) => order.status === "paid")
+    const acceptedOrders = order.filter((order) => order.status !== "pending"  )
     const pendingOrders = order.filter((order) => order.status === "pending" )
-    const acceptedMeatOrders = order.filter((order) => order.status === "paid" && order.mealType === 'meat')
-    const acceptedMixOrders = order.filter((order) => order.status === "paid" && order.mealType === 'mix')
-    const acceptedChikenOrder = order.filter((order) => order.status === "paid" && order.mealType === 'chiken')
+    const acceptedMeatOrders = order.filter((order) => order.status === "paid" || order.status === "attended" && order.mealType === 'meat')
+    const acceptedMixOrders = order.filter((order) => order.status === "paid" || order.status === "attended" && order.mealType === 'mix')
+    const acceptedChikenOrder = order.filter((order) => order.status === "paid" || order.status === "attended" && order.mealType === 'chiken')
     const meatOrders = order.filter((order) => order.mealType === 'meat')
     const chikenOrders = order.filter((order) => order.mealType === 'chiken')
     const mixOrders = order.filter((order) => order.mealType === 'mix')
     const fastingOrders = order.filter((order) => order.mealType === 'fasting')
-    const acceptedFastingOrders = order.filter((order) => order.status === "paid" && order.mealType === 'fasting')
+    const acceptedFastingOrders = order.filter((order) => order.status === "paid" || order.status === "attended" && order.mealType === 'fasting')
 
     
     const Stats = [
