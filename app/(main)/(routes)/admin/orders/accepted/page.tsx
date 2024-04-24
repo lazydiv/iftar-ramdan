@@ -23,15 +23,19 @@ const orderIdPage = async (
     }
     if (profile.role !== "ADMIN") redirect("/")
 
-    const orders = await db.order.findMany({
+
+
+    const orders: Order[] = await db.order.findMany({
         where: {
-            // id: params.orderId,
-            status: "paid"
+            OR: [
+                { status: 'accepted' },
+                { status: 'atended' }
+            ]
         },
         orderBy: {
             createdAt: "desc"
         }
-    })
+    });
     // const acceptedOrders = order?.filter((status) => status === "paid")
     if (!orders) {
         return (
