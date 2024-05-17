@@ -110,6 +110,14 @@ export  function MobileNav({role}: {role: UserRole}) {
             </MobileLink>
 
           </div>
+MobileLink
+              href="/org"
+              onOpenChange={setOpen}
+
+            >
+       المنظمون 
+            </MobileLink>
+
           <div className="mt-14">
 
          
